@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demostración de Concientización</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 1.5rem;
+      margin: 0;
+    }
+    .card {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #1e293b;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .badge {
+      display: inline-block;
+      background: #ef4444;
+      color: white;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    h2 { margin-top: 0; color: #f1f5f9; font-size: 1.3rem; }
+    p { font-size: 0.95rem; line-height: 1.5; color: #cbd5e1; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0;
+      font-size: 0.85rem;
+    }
+    .data-table td {
+      padding: 0.5rem;
+      border-bottom: 1px solid #334155;
+    }
+    .data-label { color: #94a3b8; font-weight: 600; width: 40%; }
+    .data-val { color: #38bdf8; word-break: break-all; }
+    .tip-box {
+      background: #0f233a;
+      border-left: 4px solid #38bdf8;
+      padding: 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <span class="badge">Ejercicio de Seguridad</span>
+    <h2>¿Qué expone tu teléfono al escanear?</h2>
+    <p>
+      Acabas de abrir este enlace desde un código QR. Aunque <strong>no ingresaste contraseñas ni descargaste nada</strong>, 
+      tu navegador compartió automáticamente estos datos técnicos:
+    </p>
+
+    <table class="data-table">
+      <tr>
+        <td class="data-label">Dirección IP:</td>
+        <td class="data-val" id="ip">Consultando...</td>
+      </tr>
+      <tr>
+        <td class="data-label">Ubicación de red:</td>
+        <td class="data-val" id="ubicacion">Consultando...</td>
+      </tr>
+      <tr>
+        <td class="data-label">Proveedor / ISP:</td>
+        <td class="data-val" id="isp">Consultando...</td>
+      </tr>
+      <tr>
+        <td class="data-label">Zona horaria:</td>
+        <td class="data-val" id="zona"></td>
+      </tr>
+      <tr>
+        <td class="data-label">Idioma:</td>
+        <td class="data-val" id="idioma"></td>
+      </tr>
+      <tr>
+        <td class="data-label">Pantalla:</td>
+        <td class="data-val" id="pantalla"></td>
+      </tr>
+      <tr>
+        <td class="data-label">Navegador / SO:</td>
+        <td class="data-val" id="ua"></td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Recuerda:</strong> Un atacante puede usar estos datos para perfilar tu entorno o adaptar un ataque. 
+      Nunca escanees códigos QR en lugares públicos sin verificar su procedencia.
+    </div>
+  </div>
+
+  <script>
+    // 1. Datos del navegador (lado del cliente)
+    document.getElementById('zona').innerText = Intl.DateTimeFormat().resolvedOptions().timeZone || 'No detectada';
+    document.getElementById('idioma').innerText = navigator.language || 'No detectado';
+    document.getElementById('pantalla').innerText = `${window.screen.width} x ${window.screen.height} px`;
+    document.getElementById('ua').innerText = navigator.userAgent;
+
+    // 2. Consulta de red pasiva (solo IP pública y geo de red)
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('ip').innerText = data.ip || 'No disponible';
+        document.getElementById('ubicacion').innerText = `${data.city || ''}, ${data.region || ''}, ${data.country_name || ''}`;
+        document.getElementById('isp').innerText = data.org || 'No disponible';
+      })
+      .catch(() => {
+        document.getElementById('ip').innerText = 'No se pudo obtener';
+        document.getElementById('ubicacion').innerText = 'No disponible';
+        document.getElementById('isp').innerText = 'No disponible';
+      });
+  </script>
+</body>
+</html>
