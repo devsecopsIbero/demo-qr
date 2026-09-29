@@ -6,10 +6,10 @@
   <title>¿Qué sabe internet de ti con solo un clic? | Campaña Universitaria</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -18,7 +18,6 @@
         extend: {
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'sans-serif'],
-            display: ['Space Grotesk', 'sans-serif'],
           },
           colors: {
             campus: {
@@ -26,10 +25,6 @@
               850: '#0f172a',
               800: '#1e293b',
               700: '#334155',
-              accent: '#38bdf8',
-              lime: '#a3e635',
-              violet: '#a855f7',
-              coral: '#fb7185'
             }
           }
         }
@@ -38,20 +33,9 @@
   </script>
 
   <style>
-    /* Smooth transitions and custom highlight badge glow */
     .glow-card {
       box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.12);
     }
-    .badge-pulse {
-      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
-      animation: pulseAlert 2s infinite;
-    }
-    @keyframes pulseAlert {
-      0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
-      70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
-    }
-    /* Hidden utility for smooth modals */
     .modal-backdrop {
       backdrop-filter: blur(8px);
     }
@@ -61,11 +45,8 @@
 
   <!-- Top Announcement Bar -->
   <div class="bg-gradient-to-r from-violet-600 via-pink-600 to-amber-500 py-2 px-4 text-center text-xs sm:text-sm font-semibold text-white tracking-wide shadow-md">
-    <span>Ningún dato se guarda ni se envía a servidores, todo ocurre en vivo en tu pantalla.</span>
+    <span>Ningún dato se guarda ni se envía a servidores externos; todo ocurre en vivo en tu pantalla.</span>
   </div>
-
-
-
 
   <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 w-full flex-grow">
     
@@ -80,29 +61,15 @@
             <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
             Sin pedirte permiso, sin contraseñas, sin instalar nada
           </div>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-3">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-2">
             ¡Hola! Ya sabemos bastantes cosas sobre ti...
           </h2>
-          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+          <p class="text-slate-400 text-sm">
+            Solo con dar clic o escanear un código, tu navegador comparte automáticamente información técnica sobre tu conexión, hábitos y dispositivo.
           </p>
-        </div>
-
-        <!-- Privacy Traffic Light / Semáforo de Exposición -->
-        <div class="w-full lg:w-auto min-w-[280px] bg-campus-900/90 rounded-2xl p-5 border border-slate-700/80 flex flex-col items-center text-center">
-          <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">Semáforo de Exposición</span>
-          
-          <div class="flex items-center justify-center gap-3 my-3">
-            <div class="w-8 h-8 rounded-full bg-emerald-950/60 border border-emerald-800 flex items-center justify-center text-emerald-800 font-bold opacity-40">🟢</div>
-            <div class="w-8 h-8 rounded-full bg-amber-950/60 border border-amber-800 flex items-center justify-center text-amber-800 font-bold opacity-40">🟡</div>
-            <div class="w-9 h-9 rounded-full bg-rose-500 border-2 border-rose-300 flex items-center justify-center text-white font-bold shadow-lg badge-pulse">🔴</div>
-          </div>
-
-          <span class="text-base font-extrabold text-rose-400">Nivel: Muy Alto (Totalmente Visible)</span>
-          <p class="text-[11px] text-slate-400 mt-1">Cualquier sitio web puede distinguir tu dispositivo entre millones.</p>
         </div>
       </div>
     </div>
-
 
     <!-- Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -142,7 +109,7 @@
         </div>
 
         <div class="mt-4 pt-3 border-t border-slate-800 text-[12px] text-slate-300 bg-cyan-950/20 p-2.5 rounded-xl border border-cyan-500/20">
-         Cualquier página sabe si estás conectado desde el Wi-Fi de la universidad, desde el internet de tu casa o usando tus datos.
+          Cualquier página sabe si estás conectado desde el Wi-Fi de la universidad, desde el internet de tu casa o usando tus datos móviles.
         </div>
       </article>
 
@@ -154,7 +121,6 @@
               <span class="text-2xl">📱</span>
               <div>
                 <h3 class="font-bold text-white text-base">2. Información de tu Celular o Laptop</h3>
-                <p class="text-xs text-slate-400"></p>
               </div>
             </div>
             <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-pink-500/10 text-pink-300 border border-pink-500/20">Hardware</span>
@@ -185,7 +151,7 @@
         </div>
 
         <div class="mt-4 pt-3 border-t border-slate-800 text-[12px] text-slate-300 bg-pink-950/20 p-2.5 rounded-xl border border-pink-500/20">
-         Saben si traes un iPhone nuevo, una laptop gamer pesada o un celular con poca batería.
+          Saben con precisión si traes un iPhone, una laptop gamer pesada o un celular con poca batería.
         </div>
       </article>
 
@@ -224,12 +190,11 @@
         </div>
 
         <div class="mt-4 pt-3 border-t border-slate-800 text-[12px] text-slate-300 bg-amber-950/20 p-2.5 rounded-xl border border-amber-500/20">
-          Si navegas a las 3:00 AM con modo oscuro y teclado en español, ya saben tu ritmo de sueño y cultura antes de que escribas una letra.
+          Si navegas a las 3:00 AM con modo oscuro y teclado en español, ya saben tu ritmo de sueño y cultura antes de que escribas una sola letra.
         </div>
       </article>
 
-    
-      <!-- 4. Cosas a tu alrededor (Periféricos) -->
+      <!-- 4. Ojos y Oídos de tu Equipo -->
       <article class="bg-campus-850 rounded-2xl border border-slate-700/80 p-5 flex flex-col justify-between hover:border-lime-500/50 transition-all duration-200">
         <div>
           <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-700/50">
@@ -245,11 +210,11 @@
 
           <div class="space-y-3 text-sm">
             <div class="bg-campus-900/80 p-3 rounded-xl border border-slate-800">
-              <span class="text-xs text-slate-400 block mb-0.5">Dispositivos conectados:</span>
+              <span class="text-xs text-slate-400 block mb-0.5">Dispositivos detectados:</span>
               <p id="mediaPeripherals" class="font-bold text-lime-300 text-base">Consultando...</p>
             </div>
             <div class="flex justify-between items-center py-1 border-b border-slate-800 text-xs">
-              <span class="text-slate-400">Giroscopio (si mueves el cel):</span>
+              <span class="text-slate-400">Giroscopio (movimiento):</span>
               <span id="motionSensorRelatable" class="font-medium text-slate-200 text-right">Detectando...</span>
             </div>
             <div class="flex justify-between items-center py-1 text-xs">
@@ -260,12 +225,12 @@
         </div>
 
         <div class="mt-4 pt-3 border-t border-slate-800 text-[12px] text-slate-300 bg-lime-950/20 p-2.5 rounded-xl border border-lime-500/20">
-          No pueden verte la cara sin tu permiso (eso está bloqueado por el candado del navegador), pero sí pueden saber cuántas cámaras o micrófonos tienes conectados.
+          No pueden verte ni escucharte sin tu permiso explícito (el navegador lo bloquea), pero sí pueden saber cuántas cámaras o micrófonos tienes conectados.
         </div>
       </article>
 
-      <!-- 6. ¿Qué hacen con esto? Resumen rápido -->
-      <article class="bg-gradient-to-br from-campus-850 to-slate-900 rounded-2xl border border-slate-700/80 p-5 flex flex-col justify-between">
+      <!-- 5. El Rompecabezas Completo -->
+      <article class="bg-gradient-to-br from-campus-850 to-slate-900 rounded-2xl border border-slate-700/80 p-5 flex flex-col justify-between md:col-span-2 lg:col-span-2">
         <div>
           <div class="flex items-center gap-3 pb-3 mb-4 border-b border-slate-700/50">
             <span class="text-2xl">🎯</span>
@@ -275,18 +240,18 @@
             </div>
           </div>
 
-          <ul class="space-y-2.5 text-xs text-slate-300">
-            <li class="flex items-start gap-2">
-              <span class="text-pink-400 font-bold">1.</span>
-              <span><strong>Anuncios a la medida:</strong> Si ven que tu batería está en 5% en la noche, te muestran promociones de comida rápida o cargadores urgentes.</span>
+          <ul class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-slate-300">
+            <li class="bg-campus-900/60 p-3 rounded-xl border border-slate-800/80">
+              <span class="text-pink-400 font-bold block text-sm mb-1">1. Anuncios a la medida</span>
+              <span>Si ven batería baja en la noche, pueden priorizar ofertas urgentes o servicios de comida rápida a domicilio.</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-cyan-400 font-bold">2.</span>
-              <span><strong>Precios dinámicos:</strong> Algunas aerolíneas o tiendas cobran más si ven que entras desde la laptop más cara del mercado.</span>
+            <li class="bg-campus-900/60 p-3 rounded-xl border border-slate-800/80">
+              <span class="text-cyan-400 font-bold block text-sm mb-1">2. Precios dinámicos</span>
+              <span>Ciertas aerolíneas o tiendas en línea varían tarifas al detectar equipos de gama alta o ubicaciones específicas.</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-400 font-bold">3.</span>
-              <span><strong>Venta de perfiles:</strong> Brokers de datos compran estas huellas para saber qué páginas visitas todos los días sin que des tu nombre.</span>
+            <li class="bg-campus-900/60 p-3 rounded-xl border border-slate-800/80">
+              <span class="text-amber-400 font-bold block text-sm mb-1">3. Perfiles de usuario</span>
+              <span>Se cruzan estos identificadores para reconocerte entre diferentes páginas web sin necesidad de que inicies sesión.</span>
             </li>
           </ul>
         </div>
@@ -298,39 +263,37 @@
 
     </div>
 
-    <!-- Quick action cards: Practical advice for university students -->
+    <!-- Consejos prácticos universitarios -->
     <div class="mt-10 p-6 rounded-3xl bg-campus-850 border border-slate-700">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-        <div>
-          <h3 class="text-lg font-bold text-white flex items-center gap-2">
-            <span>🎒</span> 3 Reglas de oro para sobrevivir en la universidad sin regalar tu vida
-          </h3>
-          <p class="text-xs text-slate-400">Tips reales que no requieren ser un hacker ni volverse paranoico.</p>
-        </div>
+      <div class="mb-6">
+        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+          <span>🎒</span> 3 Reglas de oro para navegar seguro en la universidad
+        </h3>
+        <p class="text-xs text-slate-400">Recomendaciones directas y fáciles de aplicar en el día a día escolar.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div class="p-4 rounded-2xl bg-campus-900 border border-slate-800">
           <div class="text-2xl mb-2">🚫 🏷️</div>
-          <h4 class="font-bold text-white text-sm mb-1">Cuidado con los QR pegados en la calle</h4>
+          <h4 class="font-bold text-white text-sm mb-1">Ojo con los QR pegados en el campus</h4>
           <p class="text-xs text-slate-300 leading-relaxed">
-            Cualquiera puede imprimir una calcomanía QR y pegarla sobre el menú de una cafetería o un póster del campus para redirigirte a páginas que aspiran tus datos o intentan estafarte.
+            Cualquiera puede sobreponer una calcomanía QR en una cafetería o cartelera para redirigirte a páginas que capturan tu red o simulan accesos de inicio de sesión.
           </p>
         </div>
 
         <div class="p-4 rounded-2xl bg-campus-900 border border-slate-800">
           <div class="text-2xl mb-2">🦊 🛡️</div>
-          <h4 class="font-bold text-white text-sm mb-1">Cambia o configura tu navegador</h4>
+          <h4 class="font-bold text-white text-sm mb-1">Elige navegadores con defensas</h4>
           <p class="text-xs text-slate-300 leading-relaxed">
-            Navegadores como <strong>Brave</strong> o <strong>Firefox</strong> (activando "Protección contra huellas digitales") mezclan datos falsos para que tu dispositivo se vea igual que todos los demás y no te puedan fichar.
+            Opciones como <strong>Firefox</strong> o <strong>Brave</strong> introducen datos genéricos para que tu equipo no sea fácil de perfilar entre páginas.
           </p>
         </div>
 
         <div class="p-4 rounded-2xl bg-campus-900 border border-slate-800">
           <div class="text-2xl mb-2">☕ 📶</div>
-          <h4 class="font-bold text-white text-sm mb-1">En el Wi-Fi público, sé precavido</h4>
+          <h4 class="font-bold text-white text-sm mb-1">Cuidado en redes Wi-Fi abiertas</h4>
           <p class="text-xs text-slate-300 leading-relaxed">
-            Cuando estés en la red abierta del campus, el café o el aeropuerto, evita entrar a tu banca móvil o trámites delicados sin asegurarte de que la página tenga el candado verde/seguro (HTTPS) o utiliza una VPN confiable.
+            Al conectarte a redes abiertas en cafeterías o eventos, evita realizar transferencias bancarias o trámites sensibles sin verificar el candado de seguridad (HTTPS).
           </p>
         </div>
       </div>
@@ -338,49 +301,7 @@
 
   </main>
 
-
-  <!-- Modal 1: ¿Por qué debería importarme si no tengo nada que ocultar? -->
-  <div id="whyCareModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 modal-backdrop hidden opacity-0 transition-opacity duration-200">
-    <div class="bg-campus-850 border border-slate-700 rounded-3xl max-w-lg w-full p-6 text-slate-200 shadow-2xl relative">
-      <button onclick="closeModal('whyCareModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-lg bg-campus-900">
-        ✕
-      </button>
-
-      <div class="w-12 h-12 rounded-2xl bg-pink-500/20 text-pink-400 border border-pink-500/30 flex items-center justify-center text-2xl mb-4">
-        🤔
-      </div>
-
-      <h3 class="text-xl font-bold text-white mb-2">
-        "Yo no soy famoso ni hago nada malo... ¿por qué me importaría?"
-      </h3>
-      <p class="text-xs text-slate-400 mb-4">
-        Es la respuesta más común entre estudiantes, pero la privacidad no es sobre tener "secretos sucios", es sobre proteger tu dinero y tus decisiones:
-      </p>
-
-      <div class="space-y-3.5 text-xs text-slate-300">
-        <div class="p-3 rounded-xl bg-campus-900 border border-slate-800">
-          <h4 class="font-bold text-cyan-300 mb-0.5">1. Precios inflados para ti</h4>
-          <p>Las plataformas de viajes, hoteles o cursos en línea ajustan precios según tu dispositivo y ubicación. Si ven que navegas con una laptop cara o desde una zona de alto poder adquisitivo, te cobran más.</p>
-        </div>
-
-        <div class="p-3 rounded-xl bg-campus-900 border border-slate-800">
-          <h4 class="font-bold text-pink-300 mb-0.5">2. Estafas hechas a tu medida (Ingeniería Social)</h4>
-          <p>Si saben tu operadora telefónica, tu ciudad y tu modelo de celular, un estafador puede enviarte un mensaje simulando ser soporte técnico de tu compañía real para que caigas fácilmente.</p>
-        </div>
-
-        <div class="p-3 rounded-xl bg-campus-900 border border-slate-800">
-          <h4 class="font-bold text-amber-300 mb-0.5">3. El historial que nunca borraste</h4>
-          <p>Aunque borres tu historial o uses "Modo Incógnito" para buscar temas privados de salud, finanzas o personales, tu huella digital sigue siendo la misma y las empresas unen esos puntos.</p>
-        </div>
-      </div>
-
-      <button onclick="closeModal('whyCareModal')" class="mt-5 w-full py-2.5 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-bold text-xs transition">
-        Entendido, ¡gracias por la explicación!
-      </button>
-    </div>
-  </div>
-
-  <!-- Modal 2: Cómo protegerme -->
+  <!-- Modal: Cómo protegerme -->
   <div id="howToProtectModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 modal-backdrop hidden opacity-0 transition-opacity duration-200">
     <div class="bg-campus-850 border border-slate-700 rounded-3xl max-w-lg w-full p-6 text-slate-200 shadow-2xl relative">
       <button onclick="closeModal('howToProtectModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-lg bg-campus-900">
@@ -392,40 +313,40 @@
       </div>
 
       <h3 class="text-xl font-bold text-white mb-2">
-        Protege tu huella sin complicarte la vida
+        Protege tu información sin complicaciones
       </h3>
       <p class="text-xs text-slate-400 mb-4">
-        No necesitas desconectarte del mundo, solo aplicar estos hábitos clave:
+        No necesitas ser un experto en sistemas, solo tener en cuenta estos 3 hábitos:
       </p>
 
       <div class="space-y-3 text-xs text-slate-300">
         <div class="flex items-start gap-3 p-3 rounded-xl bg-campus-900 border border-slate-800">
           <span class="text-xl">🦊</span>
           <div>
-            <strong class="text-white block">Usa navegadores que bloqueen rastreadores por defecto</strong>
-            Prueba Firefox (con protección estricta) o Brave. Estos navegadores introducen "ruido falso" para que tu huella Canvas y gráfica sea genérica.
+            <strong class="text-white block">Usa navegadores que bloqueen rastreadores</strong>
+            Prueba Firefox (con protección estricta) o Brave para dificultar que sigan tus pasos entre sitios.
           </div>
         </div>
 
         <div class="flex items-start gap-3 p-3 rounded-xl bg-campus-900 border border-slate-800">
           <span class="text-xl">🔎</span>
           <div>
-            <strong class="text-white block">Antes de abrir un QR, mira la vista previa del enlace</strong>
-            Tu cámara siempre muestra el link antes de hacer clic. Si ves nombres extraños como `bit.ly/xyz-oferta` en lugar del dominio oficial del evento o restaurante, no entres.
+            <strong class="text-white block">Revisa la URL antes de entrar</strong>
+            La cámara suele mostrar una vista previa del enlace antes de abrirlo. Si no reconoces el dominio, evítalo.
           </div>
         </div>
 
         <div class="flex items-start gap-3 p-3 rounded-xl bg-campus-900 border border-slate-800">
           <span class="text-xl">🔄</span>
           <div>
-            <strong class="text-white block">No pospongas las actualizaciones del sistema</strong>
-            Muchas de estas fugas de datos de sensores y batería se van cerrando con las nuevas versiones de iOS, Android, Windows y macOS.
+            <strong class="text-white block">Mantén actualizado tu sistema operativo</strong>
+            Las actualizaciones continuas de Android, iOS, Windows o macOS corrigen fugas de datos que exponen información del equipo.
           </div>
         </div>
       </div>
 
       <button onclick="closeModal('howToProtectModal')" class="mt-5 w-full py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs transition">
-        ¡Excelente, lo tendré en cuenta!
+        ¡Entendido!
       </button>
     </div>
   </div>
@@ -433,52 +354,44 @@
   <!-- Footer -->
   <footer class="border-t border-campus-800 py-6 text-center text-xs text-slate-500 bg-campus-850/40">
     <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-      
-      <span class="text-slate-400">Aprende más sobre tu privacidad compartiendo este enlace con tus amigos del campus.</span>
+      <span class="text-slate-400">Demostración con fines educativos sobre privacidad y concientización digital.</span>
     </div>
   </footer>
 
-
   <script>
-    // Fast string hash generator for the fingerprint demo
-    function generateSimpleHash(str) {
-      let hash = 0;
-      for (let i = 0; i < str.length; i++) {
-        const char = str.charCodeAt(i);
-        hash = ((hash << 5) - hash) + char;
-        hash |= 0;
-      }
-      return '#' + Math.abs(hash).toString(16).toUpperCase().padStart(6, '0');
-    }
-
     // Modal helpers
     function openModal(id) {
       const modal = document.getElementById(id);
+      if (!modal) return;
       modal.classList.remove('hidden');
       setTimeout(() => modal.classList.remove('opacity-0'), 10);
     }
 
     function closeModal(id) {
       const modal = document.getElementById(id);
+      if (!modal) return;
       modal.classList.add('opacity-0');
       setTimeout(() => modal.classList.add('hidden'), 200);
     }
 
     // 1. Where are you in the real world
     function detectLocationAndNetwork() {
-      // Network speed / connection type
-      const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
       const speedElem = document.getElementById('netSpeedRelatable');
-      if (conn) {
-        if (conn.type === 'wifi') {
-          speedElem.textContent = "Wi-Fi (Banda Ancha)";
-        } else if (conn.type === 'cellular') {
-          speedElem.textContent = `Datos celulares (${conn.effectiveType ? conn.effectiveType.toUpperCase() : 'Móvil'})`;
+      try {
+        const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        if (conn) {
+          if (conn.type === 'wifi') {
+            speedElem.textContent = "Wi-Fi (Banda Ancha)";
+          } else if (conn.type === 'cellular') {
+            speedElem.textContent = `Datos móviles (${conn.effectiveType ? conn.effectiveType.toUpperCase() : 'Móvil'})`;
+          } else {
+            speedElem.textContent = conn.effectiveType ? `Conexión tipo ${conn.effectiveType.toUpperCase()}` : "Conectado a Internet";
+          }
         } else {
-          speedElem.textContent = conn.effectiveType ? `Conexión tipo ${conn.effectiveType.toUpperCase()}` : "Conectado a Internet";
+          speedElem.textContent = "Banda ancha / Wi-Fi detectado";
         }
-      } else {
-        speedElem.textContent = "Banda ancha / Wi-Fi detectado";
+      } catch (e) {
+        if (speedElem) speedElem.textContent = "Conectado a Internet";
       }
 
       // GeoIP fetch
@@ -492,9 +405,18 @@
           }
         })
         .catch(() => {
-          document.getElementById('geoCity').textContent = "Tu ciudad / Campus universitario";
-          document.getElementById('geoISP').textContent = "Red protegida o bloqueada por navegador";
-          document.getElementById('geoIpPublic').textContent = "Oculta por privacidad local";
+          fetch('https://api.ipify.org?format=json')
+            .then(res => res.json())
+            .then(d => {
+              document.getElementById('geoCity').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone || "Zona local detectada";
+              document.getElementById('geoISP').textContent = "Red local activa";
+              document.getElementById('geoIpPublic').textContent = d.ip;
+            })
+            .catch(() => {
+              document.getElementById('geoCity').textContent = "Tu ciudad / Red universitaria";
+              document.getElementById('geoISP').textContent = "Red protegida o con bloqueador";
+              document.getElementById('geoIpPublic').textContent = "Oculta por privacidad local";
+            });
         });
     }
 
@@ -506,154 +428,150 @@
 
       if (/iPhone/i.test(ua)) type = "Apple iPhone";
       else if (/iPad/i.test(ua)) type = "Apple iPad (Tablet)";
-      else if (/Android/i.test(ua)) type = "Teléfono Android";
+      else if (/Android/i.test(ua)) type = "Teléfono / Dispositivo Android";
       else if (/Macintosh|Mac OS X/i.test(ua)) type = "Laptop / Mac (Apple)";
       else if (/Windows NT/i.test(ua)) type = "Laptop / PC con Windows";
       else if (/Linux/i.test(ua)) type = "Computadora con Linux";
 
-      deviceElem.textContent = type;
+      if (deviceElem) deviceElem.textContent = type;
 
       // Touch screen check
+      const touchElem = document.getElementById('screenTouch');
       const touchPoints = navigator.maxTouchPoints || 0;
-      document.getElementById('screenTouch').textContent = touchPoints > 0 
-        ? `Sí (Detecta hasta ${touchPoints} dedos)` 
-        : "No (Usas mouse o touchpad normal)";
+      if (touchElem) {
+        touchElem.textContent = touchPoints > 0 
+          ? `Sí (Detecta hasta ${touchPoints} dedos)` 
+          : "No (Usas mouse o touchpad normal)";
+      }
 
       // Screen size
-      document.getElementById('screenPixels').textContent = `${window.screen.width} x ${window.screen.height} px`;
+      const screenElem = document.getElementById('screenPixels');
+      if (screenElem) {
+        screenElem.textContent = `${window.screen.width} x ${window.screen.height} px`;
+      }
 
       // Battery status
       const batElem = document.getElementById('batteryStatus');
-      if ('getBattery' in navigator) {
-        navigator.getBattery().then(bat => {
-          const update = () => {
-            const level = Math.round(bat.level * 100);
-            const state = bat.charging ? "⚡ Cargando" : "🔋 En batería";
-            batElem.textContent = `${level}% (${state})`;
-          };
-          update();
-          bat.onlevelchange = update;
-          bat.onchargingchange = update;
-        }).catch(() => {
-          batElem.textContent = "Oculto por seguridad del navegador";
-        });
-      } else {
-        batElem.textContent = "Tu navegador no la expone (Bien hecho)";
+      if (batElem) {
+        if ('getBattery' in navigator) {
+          navigator.getBattery().then(bat => {
+            const update = () => {
+              const level = Math.round(bat.level * 100);
+              const state = bat.charging ? "⚡ Cargando" : "🔋 En batería";
+              batElem.textContent = `${level}% (${state})`;
+            };
+            update();
+            bat.onlevelchange = update;
+            bat.onchargingchange = update;
+          }).catch(() => {
+            batElem.textContent = "Oculto por seguridad del navegador";
+          });
+        } else {
+          batElem.textContent = "Tu navegador no la expone (Bien)";
+        }
       }
 
-      // GPU check (WebGL friendly interpretation)
+      // GPU check
       const gpuElem = document.getElementById('gpuFriendly');
-      try {
-        const canvas = document.createElement('canvas');
-        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-        if (gl) {
-          const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-          if (debugInfo) {
-            const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
-            if (/NVIDIA/i.test(renderer)) gpuElem.textContent = "Tarjeta NVIDIA Gamer/Pro";
-            else if (/Radeon|AMD/i.test(renderer)) gpuElem.textContent = "Chip Gráfico AMD Radeon";
-            else if (/Apple/i.test(renderer)) gpuElem.textContent = "Chip Gráfico Apple Silicon (M-Series/A-Series)";
-            else if (/Adreno/i.test(renderer)) gpuElem.textContent = "Procesador Snapdragon (Adreno)";
-            else if (/Mali/i.test(renderer)) gpuElem.textContent = "Chip ARM Mali (Móvil)";
-            else if (/Intel/i.test(renderer)) gpuElem.textContent = "Gráficos integrados Intel";
-            else gpuElem.textContent = renderer.substring(0, 25) + "...";
+      if (gpuElem) {
+        try {
+          const canvas = document.createElement('canvas');
+          const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+          if (gl) {
+            const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+            if (debugInfo) {
+              const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+              if (/NVIDIA/i.test(renderer)) gpuElem.textContent = "Tarjeta NVIDIA Gamer/Pro";
+              else if (/Radeon|AMD/i.test(renderer)) gpuElem.textContent = "Chip Gráfico AMD Radeon";
+              else if (/Apple/i.test(renderer)) gpuElem.textContent = "Chip Apple Silicon";
+              else if (/Adreno/i.test(renderer)) gpuElem.textContent = "Procesador Snapdragon (Adreno)";
+              else if (/Mali/i.test(renderer)) gpuElem.textContent = "Chip ARM Mali (Móvil)";
+              else if (/Intel/i.test(renderer)) gpuElem.textContent = "Gráficos integrados Intel";
+              else gpuElem.textContent = renderer.substring(0, 22) + "...";
+            } else {
+              gpuElem.textContent = "Chip acelerador estándar";
+            }
           } else {
-            gpuElem.textContent = "Chip acelerador estándar";
+            gpuElem.textContent = "No expuesto";
           }
-        } else {
-          gpuElem.textContent = "No expuesto";
+        } catch (e) {
+          gpuElem.textContent = "Bloqueado";
         }
-      } catch (e) {
-        gpuElem.textContent = "Bloqueado";
       }
     }
 
     // 3. Habits and routines
     function detectHabits() {
       // Dark mode preference
-      const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.getElementById('darkModeHabit').textContent = isDark 
-        ? "Sí, prefieres modo oscuro 🌙" 
-        : "No, usas modo claro diurno ☀️";
+      const darkModeElem = document.getElementById('darkModeHabit');
+      if (darkModeElem) {
+        const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        darkModeElem.textContent = isDark 
+          ? "Sí, prefieres modo oscuro 🌙" 
+          : "No, usas modo claro diurno ☀️";
+      }
 
       // Time zone
-      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "Hora local";
-      document.getElementById('timeZoneHabit').textContent = tz;
+      const tzElem = document.getElementById('timeZoneHabit');
+      if (tzElem) {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "Hora local";
+        tzElem.textContent = tz;
+      }
 
       // Languages
-      const lang = navigator.languages ? navigator.languages.slice(0, 2).join(', ') : navigator.language;
-      document.getElementById('languageHabit').textContent = lang || "Español";
+      const langElem = document.getElementById('languageHabit');
+      if (langElem) {
+        const lang = navigator.languages ? navigator.languages.slice(0, 2).join(', ') : navigator.language;
+        langElem.textContent = lang || "Español";
+      }
 
-      // Browser
-      const ua = navigator.userAgent;
-      let browserName = "Navegador web";
-      if (/Edg\//i.test(ua)) browserName = "Microsoft Edge";
-      else if (/Chrome\//i.test(ua)) browserName = "Google Chrome";
-      else if (/Firefox\//i.test(ua)) browserName = "Mozilla Firefox";
-      else if (/Safari\//i.test(ua)) browserName = "Apple Safari";
-      document.getElementById('browserHabit').textContent = browserName;
-    }
-
-    // 4. Digital fingerprint (Canvas demo)
-    function generateInvisibleFingerprint() {
-      try {
-        const canvas = document.getElementById('miniTestCanvas');
-        const ctx = canvas.getContext('2d');
-        
-        ctx.fillStyle = '#38bdf8';
-        ctx.fillRect(0, 0, 80, 30);
-        ctx.font = '12px sans-serif';
-        ctx.fillStyle = '#ffffff';
-        ctx.fillText('CampusID 🎓', 5, 20);
-
-        const data = canvas.toDataURL();
-        const hash = generateSimpleHash(data);
-        document.getElementById('canvasFingerprint').textContent = hash;
-      } catch (e) {
-        document.getElementById('canvasFingerprint').textContent = "#GENÉRICO";
+      // Browser name
+      const browserElem = document.getElementById('browserHabit');
+      if (browserElem) {
+        const ua = navigator.userAgent;
+        let browserName = "Navegador web";
+        if (/Edg\//i.test(ua)) browserName = "Microsoft Edge";
+        else if (/Chrome\//i.test(ua)) browserName = "Google Chrome";
+        else if (/Firefox\//i.test(ua)) browserName = "Mozilla Firefox";
+        else if (/Safari\//i.test(ua)) browserName = "Apple Safari";
+        browserElem.textContent = browserName;
       }
     }
 
-    // 5. Peripherals (microphones/cameras count)
+    // 4. Peripherals (microphones/cameras count) & Sensors
     function detectPeripherals() {
       const periphElem = document.getElementById('mediaPeripherals');
-      if (navigator.mediaDevices && navigator.mediaDevices.enumerateDevices) {
-        navigator.mediaDevices.enumerateDevices().then(devices => {
-          const cams = devices.filter(d => d.kind === 'videoinput').length;
-          const mics = devices.filter(d => d.kind === 'audioinput').length;
-          periphElem.textContent = `${cams} Cámara(s) y ${mics} Micrófono(s)`;
-        }).catch(() => {
-          periphElem.textContent = "Permiso no solicitado";
-        });
-      } else {
-        periphElem.textContent = "Sensor no disponible";
+      if (periphElem) {
+        if (navigator.mediaDevices && navigator.mediaDevices.enumerateDevices) {
+          navigator.mediaDevices.enumerateDevices().then(devices => {
+            const cams = devices.filter(d => d.kind === 'videoinput').length;
+            const mics = devices.filter(d => d.kind === 'audioinput').length;
+            periphElem.textContent = `${cams} Cámara(s) y ${mics} Micrófono(s)`;
+          }).catch(() => {
+            periphElem.textContent = "Permiso no solicitado";
+          });
+        } else {
+          periphElem.textContent = "Sensor no disponible";
+        }
       }
 
       // Motion
       const motionElem = document.getElementById('motionSensorRelatable');
-      if (window.DeviceMotionEvent) {
-        motionElem.textContent = "Disponible (Sabe si caminas o estás quieto)";
-      } else {
-        motionElem.textContent = "No disponible en este equipo";
+      if (motionElem) {
+        if (window.DeviceMotionEvent) {
+          motionElem.textContent = "Disponible (Detecta si mueves el equipo)";
+        } else {
+          motionElem.textContent = "No disponible en este equipo";
+        }
       }
     }
 
-    // Refresh animation trigger
-    function refreshData() {
-      const icon = document.getElementById('reloadIcon');
-      icon.classList.add('rotate-180');
-      setTimeout(() => icon.classList.remove('rotate-180'), 500);
-
+    // Safe execution on DOM ready
+    window.addEventListener('DOMContentLoaded', () => {
       detectLocationAndNetwork();
       detectDeviceAndHardware();
       detectHabits();
-      generateInvisibleFingerprint();
       detectPeripherals();
-    }
-
-    // Execute immediately on DOM ready
-    window.addEventListener('DOMContentLoaded', () => {
-      refreshData();
     });
   </script>
 </body>
