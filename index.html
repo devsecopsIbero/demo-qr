@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,18 +13,20 @@
 
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'sans-serif'],
           },
           colors: {
-            campus: {
-              900: '#090d16',
-              850: '#0f172a',
-              800: '#1e293b',
-              700: '#334155',
+            brand: {
+              navy: '#0f172a',      // Azul marino profundo
+              darkBlue: '#1e3a8a',  // Azul cobalto
+              blue: '#2563eb',      // Azul primario
+              lightBlue: '#38bdf8', // Azul celeste
+              softBlue: '#eff6ff',  // Fondo azul suave
+              alertRed: '#dc2626',  // Rojo alerta
+              lightRed: '#fef2f2',  // Fondo rojo muy claro
             }
           }
         }
@@ -33,39 +35,39 @@
   </script>
 
   <style>
-    .glow-card {
-      box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.12);
+    .clean-shadow {
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
     }
     .modal-backdrop {
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(6px);
     }
   </style>
 </head>
-<body class="bg-campus-900 text-slate-100 font-sans min-h-screen selection:bg-pink-500 selection:text-white flex flex-col justify-between antialiased">
+<body class="bg-white text-slate-800 font-sans min-h-screen selection:bg-brand-blue selection:text-white flex flex-col justify-between antialiased">
 
-  <!-- Top Announcement Bar -->
-  <div class="bg-gradient-to-r from-violet-600 via-pink-600 to-amber-500 py-2 px-4 text-center text-xs sm:text-sm font-semibold text-white tracking-wide shadow-md">
-    <span>Ningún dato se guarda ni se envía a servidores externos; todo ocurre en vivo en tu pantalla.</span>
+  <div class="bg-brand-alertRed py-2.5 px-4 text-center text-xs sm:text-sm font-semibold text-white tracking-wide shadow-sm flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-white animate-pulse"></span>
+    <span>Ningún dato se guarda ni se envía a servidores externos, todo ocurre en vivo en tu pantalla.</span>
   </div>
 
   <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 w-full flex-grow">
     
     <!-- Hero / Shock Hook -->
-    <div class="rounded-3xl bg-gradient-to-br from-campus-850 via-campus-800 to-slate-900 border border-slate-700 p-6 sm:p-8 relative overflow-hidden mb-8 glow-card">
-      <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-pink-500/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -left-10 -top-10 w-60 h-60 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="rounded-3xl bg-slate-50 border border-slate-200/80 p-6 sm:p-10 relative overflow-hidden mb-8 clean-shadow">
+      <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-blue-100/60 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-10 -top-10 w-64 h-64 bg-red-100/40 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-        <div class="max-w-2xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300 text-xs font-semibold mb-3">
-            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-            Sin pedirte permiso, sin contraseñas, sin instalar nada
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-brand-alertRed text-xs font-bold mb-3 uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-brand-alertRed"></span>
+            Sin contraseñas ni permisos previos
           </div>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-2">
-            ¡Hola! Ya sabemos bastantes cosas sobre ti...
-          </h2>
-          <p class="text-slate-400 text-sm">
-            Solo con dar clic o escanear un código, tu navegador comparte automáticamente información técnica sobre tu conexión, hábitos y dispositivo.
+          <h1 class="text-3xl sm:text-3xl lg:text-4xl font-extrabold text-brand-navy tracking-tight mb-3">
+            ¡Hola! Ya sabemos bastante sobre ti...
+          </h1>
+          <p class="text-slate-600 text-xm sm:text-base leading-relaxed">
+            Solo con dar un clic, tu navegador web comparte información  clave sobre tu conexión, hábitos de navegación y características de tu dispositivo.
           </p>
         </div>
       </div>
@@ -75,286 +77,285 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- 1. Dónde estás en el mundo real -->
-      <article class="bg-campus-850 rounded-2xl border border-slate-700/80 p-5 flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-200">
+      <article class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:border-brand-blue transition-all duration-200 clean-shadow">
         <div>
-          <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-700/50">
+          <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
-              <span class="text-2xl">📍</span>
+              <span class="text-2xl p-2 rounded-xl bg-blue-50 border border-blue-100">📍</span>
               <div>
-                <h3 class="font-bold text-white text-base">1. ¿Dónde estás ahora?</h3>
-                <p class="text-xs text-slate-400">Tu ubicación aproximada en el mapa</p>
+                <h2 class="font-bold text-brand-navy text-base">1. ¿Dónde estás ahora?</h2>
               </div>
             </div>
-            <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Red</span>
           </div>
 
           <div class="space-y-3 text-sm">
-            <div class="bg-campus-900/80 p-3 rounded-xl border border-slate-800">
-              <span class="text-xs text-slate-400 block mb-0.5">Ciudad o Región detectada:</span>
-              <p id="geoCity" class="font-bold text-cyan-300 text-base">Buscando tu zona...</p>
+            <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/70">
+              <span class="text-xs font-semibold text-slate-500 block mb-0.5">Ciudad o Región detectada:</span>
+              <p id="geoCity" class="font-bold text-brand-darkBlue text-base">Buscando tu zona...</p>
             </div>
-            <div class="flex justify-between items-center py-1 border-b border-slate-800 text-xs">
-              <span class="text-slate-400">¿Quién te da internet?</span>
-              <span id="geoISP" class="font-medium text-slate-200 text-right">Detectando compañía...</span>
+            <div class="flex justify-between items-center py-1.5 border-b border-slate-100 text-xs">
+              <span class="text-slate-500">¿Quién te da internet?</span>
+              <span id="geoISP" class="font-semibold text-slate-700 text-right">Detectando compañía...</span>
             </div>
-            <div class="flex justify-between items-center py-1 border-b border-slate-800 text-xs">
-              <span class="text-slate-400">¿Datos móviles o Wi-Fi?</span>
-              <span id="netSpeedRelatable" class="font-medium text-slate-200 text-right">Midiendo...</span>
+            <div class="flex justify-between items-center py-1.5 border-b border-slate-100 text-xs">
+              <span class="text-slate-500">¿Datos móviles o Wi-Fi?</span>
+              <span id="netSpeedRelatable" class="font-semibold text-slate-700 text-right">Midiendo...</span>
             </div>
-            <div class="flex justify-between items-center py-1 text-xs">
-              <span class="text-slate-400">Tu 'código postal' de internet (IP):</span>
-              <span id="geoIpPublic" class="font-mono text-slate-400 text-right">Obteniendo...</span>
+            <div class="flex justify-between items-center py-1.5 text-xs">
+              <span class="text-slate-500">Tu 'código postal' de red (IP):</span>
+              <span id="geoIpPublic" class="font-mono font-medium text-brand-alertRed text-right">Obteniendo...</span>
             </div>
           </div>
         </div>
 
-        <div class="mt-4 pt-3 border-t border-slate-800 text-[12px] text-slate-300 bg-cyan-950/20 p-2.5 rounded-xl border border-cyan-500/20">
-          Cualquier página sabe si estás conectado desde el Wi-Fi de la universidad, desde el internet de tu casa o usando tus datos móviles.
+        <div class="mt-5 pt-3 border-t border-slate-100 text-[12px] text-slate-600 bg-blue-50/70 p-3 rounded-xl border border-blue-100 leading-snug">
+          Cualquier sitio web detecta al instante si navegas desde el Wi-Fi del campus, desde tu hogar o usando tus datos móviles.
         </div>
       </article>
 
       <!-- 2. La radiografía exacta de tu dispositivo -->
-      <article class="bg-campus-850 rounded-2xl border border-slate-700/80 p-5 flex flex-col justify-between hover:border-pink-500/50 transition-all duration-200">
+      <article class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:border-brand-blue transition-all duration-200 clean-shadow">
         <div>
-          <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-700/50">
+          <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
-              <span class="text-2xl">📱</span>
+              <span class="text-2xl p-2 rounded-xl bg-slate-100 border border-slate-200">📱</span>
               <div>
-                <h3 class="font-bold text-white text-base">2. Información de tu Celular o Laptop</h3>
+                <h2 class="font-bold text-brand-navy text-base">2. Datos de tu equipo</h2>
               </div>
             </div>
-            <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-pink-500/10 text-pink-300 border border-pink-500/20">Hardware</span>
           </div>
 
           <div class="space-y-3 text-sm">
-            <div class="bg-campus-900/80 p-3 rounded-xl border border-slate-800">
-              <span class="text-xs text-slate-400 block mb-0.5">Dispositivo y Sistema:</span>
-              <p id="deviceGuess" class="font-bold text-pink-300 text-base">Detectando...</p>
+            <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/70">
+              <span class="text-xs font-semibold text-slate-500 block mb-0.5">Dispositivo y Sistema Operativo:</span>
+              <p id="deviceGuess" class="font-bold text-brand-navy text-base">Detectando...</p>
             </div>
-            <div class="flex justify-between items-center py-1 border-b border-slate-800 text-xs">
-              <span class="text-slate-400">Pantalla táctil (touch):</span>
-              <span id="screenTouch" class="font-medium text-slate-200 text-right">Detectando...</span>
+            <div class="flex justify-between items-center py-1.5 border-b border-slate-100 text-xs">
+              <span class="text-slate-500">Pantalla táctil (touch):</span>
+              <span id="screenTouch" class="font-semibold text-slate-700 text-right">Detectando...</span>
             </div>
-            <div class="flex justify-between items-center py-1 border-b border-slate-800 text-xs">
-              <span class="text-slate-400">Tamaño de tu pantalla:</span>
-              <span id="screenPixels" class="font-mono text-slate-200 text-right">Midiendo...</span>
+            <div class="flex justify-between items-center py-1.5 border-b border-slate-100 text-xs">
+              <span class="text-slate-500">Resolución de pantalla:</span>
+              <span id="screenPixels" class="font-mono font-medium text-slate-700 text-right">Midiendo...</span>
             </div>
-            <div class="flex justify-between items-center py-1 border-b border-slate-800 text-xs">
-              <span class="text-slate-400">Batería restante:</span>
-              <span id="batteryStatus" class="font-medium text-emerald-400 text-right">Checando...</span>
+            <div class="flex justify-between items-center py-1.5 border-b border-slate-100 text-xs">
+              <span class="text-slate-500">Nivel de batería:</span>
+              <span id="batteryStatus" class="font-bold text-slate-800 text-right">Checando...</span>
             </div>
-            <div class="flex justify-between items-center py-1 text-xs">
-              <span class="text-slate-400">Tarjeta de video / Gráficos:</span>
-              <span id="gpuFriendly" class="font-medium text-slate-200 text-right truncate max-w-[150px]">Analizando chip...</span>
+            <div class="flex justify-between items-center py-1.5 text-xs">
+              <span class="text-slate-500">Chip Gráfico / Video:</span>
+              <span id="gpuFriendly" class="font-semibold text-slate-700 text-right truncate max-w-[150px]">Analizando...</span>
             </div>
           </div>
         </div>
 
-        <div class="mt-4 pt-3 border-t border-slate-800 text-[12px] text-slate-300 bg-pink-950/20 p-2.5 rounded-xl border border-pink-500/20">
-          Saben con precisión si traes un iPhone, una laptop gamer pesada o un celular con poca batería.
+        <div class="mt-5 pt-3 border-t border-slate-100 text-[12px] text-slate-600 bg-slate-100 p-3 rounded-xl border border-slate-200/70 leading-snug">
+          Revela si navegas desde un celular de gama alta, una computadora portátil de trabajo o un dispositivo con poca carga restante.
         </div>
       </article>
 
       <!-- 3. Tus hábitos y rutinas -->
-      <article class="bg-campus-850 rounded-2xl border border-slate-700/80 p-5 flex flex-col justify-between hover:border-amber-500/50 transition-all duration-200">
+      <article class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:border-brand-blue transition-all duration-200 clean-shadow">
         <div>
-          <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-700/50">
+          <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
-              <span class="text-2xl">⏰</span>
+              <span class="text-2xl p-2 rounded-xl bg-blue-50 border border-blue-100">⏰</span>
               <div>
-                <h3 class="font-bold text-white text-base">3. Tus Hábitos y Rutina</h3>
-                <p class="text-xs text-slate-400">Cómo te gusta configurar tus dispositivos</p>
+                <h2 class="font-bold text-brand-navy text-base">3. Tus hábitos y rutina</h2>
               </div>
             </div>
-            <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">Estilo</span>
           </div>
 
           <div class="space-y-3 text-sm">
-            <div class="bg-campus-900/80 p-3 rounded-xl border border-slate-800">
-              <span class="text-xs text-slate-400 block mb-0.5">¿Cuidas tu vista de noche?</span>
-              <p id="darkModeHabit" class="font-bold text-amber-300 text-base">Analizando tema...</p>
+            <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/70">
+              <span class="text-xs font-semibold text-slate-500 block mb-0.5">¿Cuidas tu vista de noche?</span>
+              <p id="darkModeHabit" class="font-bold text-brand-blue text-base">Analizando tema...</p>
             </div>
-            <div class="flex justify-between items-center py-1 border-b border-slate-800 text-xs">
-              <span class="text-slate-400">Zona horaria de tu reloj:</span>
-              <span id="timeZoneHabit" class="font-mono text-slate-200 text-right">Detectando...</span>
+            <div class="flex justify-between items-center py-1.5 border-b border-slate-100 text-xs">
+              <span class="text-slate-500">Zona horaria de tu reloj:</span>
+              <span id="timeZoneHabit" class="font-mono font-medium text-slate-700 text-right">Detectando...</span>
             </div>
-            <div class="flex justify-between items-center py-1 border-b border-slate-800 text-xs">
-              <span class="text-slate-400">Idiomas con los que navegas:</span>
-              <span id="languageHabit" class="font-medium text-slate-200 text-right truncate max-w-[150px]">Leyendo...</span>
+            <div class="flex justify-between items-center py-1.5 border-b border-slate-100 text-xs">
+              <span class="text-slate-500">Idiomas configurados:</span>
+              <span id="languageHabit" class="font-semibold text-slate-700 text-right truncate max-w-[150px]">Leyendo...</span>
             </div>
-            <div class="flex justify-between items-center py-1 text-xs">
-              <span class="text-slate-400">Navegador preferido:</span>
-              <span id="browserHabit" class="font-medium text-slate-200 text-right">Detectando...</span>
+            <div class="flex justify-between items-center py-1.5 text-xs">
+              <span class="text-slate-500">Navegador web actual:</span>
+              <span id="browserHabit" class="font-semibold text-slate-700 text-right">Detectando...</span>
             </div>
           </div>
         </div>
 
-        <div class="mt-4 pt-3 border-t border-slate-800 text-[12px] text-slate-300 bg-amber-950/20 p-2.5 rounded-xl border border-amber-500/20">
-          Si navegas a las 3:00 AM con modo oscuro y teclado en español, ya saben tu ritmo de sueño y cultura antes de que escribas una sola letra.
+        <div class="mt-5 pt-3 border-t border-slate-100 text-[12px] text-slate-600 bg-blue-50/70 p-3 rounded-xl border border-blue-100 leading-snug">
+          Navegar de madrugada con modo oscuro y configuraciones específicas perfila tu horario de descanso e idioma antes de interactuar.
         </div>
       </article>
 
       <!-- 4. Ojos y Oídos de tu Equipo -->
-      <article class="bg-campus-850 rounded-2xl border border-slate-700/80 p-5 flex flex-col justify-between hover:border-lime-500/50 transition-all duration-200">
+      <article class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:border-brand-blue transition-all duration-200 clean-shadow">
         <div>
-          <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-700/50">
+          <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
-              <span class="text-2xl">🎙️</span>
+              <span class="text-2xl p-2 rounded-xl bg-red-50 border border-red-100">🎙️</span>
               <div>
-                <h3 class="font-bold text-white text-base">4. Ojos y Oídos de tu Equipo</h3>
-                <p class="text-xs text-slate-400">Cámaras, micrófonos y sensores</p>
+                <h2 class="font-bold text-brand-navy text-base">4. Cámaras, micrófonos y sensores</h2>
+                <p class="text-xs text-slate-500"></p>
               </div>
             </div>
-            <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-lime-500/10 text-lime-300 border border-lime-500/20">Sensores</span>
           </div>
 
           <div class="space-y-3 text-sm">
-            <div class="bg-campus-900/80 p-3 rounded-xl border border-slate-800">
-              <span class="text-xs text-slate-400 block mb-0.5">Dispositivos detectados:</span>
-              <p id="mediaPeripherals" class="font-bold text-lime-300 text-base">Consultando...</p>
+            <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/70">
+              <span class="text-xs font-semibold text-slate-500 block mb-0.5">Dispositivos detectados:</span>
+              <p id="mediaPeripherals" class="font-bold text-slate-800 text-base">Consultando...</p>
             </div>
-            <div class="flex justify-between items-center py-1 border-b border-slate-800 text-xs">
-              <span class="text-slate-400">Giroscopio (movimiento):</span>
-              <span id="motionSensorRelatable" class="font-medium text-slate-200 text-right">Detectando...</span>
+            <div class="flex justify-between items-center py-1.5 border-b border-slate-100 text-xs">
+              <span class="text-slate-500">Giroscopio (movimiento):</span>
+              <span id="motionSensorRelatable" class="font-semibold text-slate-700 text-right">Detectando...</span>
             </div>
-            <div class="flex justify-between items-center py-1 text-xs">
-              <span class="text-slate-400">¿Accedió a tu audio/video?</span>
-              <span class="text-emerald-400 font-bold text-right">No (Requiere permiso explícito)</span>
+            <div class="flex justify-between items-center py-1.5 text-xs">
+              <span class="text-slate-500">¿Accedió a audio o cámara?</span>
+              <span class="text-emerald-600 font-bold text-right">No (Bloqueado sin permiso)</span>
             </div>
           </div>
         </div>
 
-        <div class="mt-4 pt-3 border-t border-slate-800 text-[12px] text-slate-300 bg-lime-950/20 p-2.5 rounded-xl border border-lime-500/20">
-          No pueden verte ni escucharte sin tu permiso explícito (el navegador lo bloquea), pero sí pueden saber cuántas cámaras o micrófonos tienes conectados.
+        <div class="mt-5 pt-3 border-t border-slate-100 text-[12px] text-slate-600 bg-red-50/60 p-3 rounded-xl border border-red-100 leading-snug">
+          Un portal no puede grabarte sin autorización, pero el sistema sí expone la existencia y el número exacto de periféricos conectados.
         </div>
       </article>
 
-      <!-- 5. El Rompecabezas Completo -->
-      <article class="bg-gradient-to-br from-campus-850 to-slate-900 rounded-2xl border border-slate-700/80 p-5 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+      <!-- 5. El Rompecabezas Completo: Fondo blanco e información clara -->
+      <article class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between md:col-span-2 lg:col-span-2 clean-shadow">
         <div>
-          <div class="flex items-center gap-3 pb-3 mb-4 border-b border-slate-700/50">
-            <span class="text-2xl">🎯</span>
-            <div>
-              <h3 class="font-bold text-white text-base">El Rompecabezas Completo</h3>
-              <p class="text-xs text-slate-400">¿Por qué recopilan todo esto?</p>
+          <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+            <div class="flex items-center gap-3">
+              <div>
+                <h2 class="font-bold text-brand-navy text-base">¿Cómo usaría un estafador o hacker estos datos para engañarte?</h2>
+                <p class="text-xs text-brand-alertRed font-medium"></p>
+              </div>
             </div>
+            <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-red-100 text-brand-alertRed border border-red-200">Riesgos Reales</span>
           </div>
 
-          <ul class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-slate-300">
-            <li class="bg-campus-900/60 p-3 rounded-xl border border-slate-800/80">
-              <span class="text-pink-400 font-bold block text-sm mb-1">1. Anuncios a la medida</span>
-              <span>Si ven batería baja en la noche, pueden priorizar ofertas urgentes o servicios de comida rápida a domicilio.</span>
-            </li>
-            <li class="bg-campus-900/60 p-3 rounded-xl border border-slate-800/80">
-              <span class="text-cyan-400 font-bold block text-sm mb-1">2. Precios dinámicos</span>
-              <span>Ciertas aerolíneas o tiendas en línea varían tarifas al detectar equipos de gama alta o ubicaciones específicas.</span>
-            </li>
-            <li class="bg-campus-900/60 p-3 rounded-xl border border-slate-800/80">
-              <span class="text-amber-400 font-bold block text-sm mb-1">3. Perfiles de usuario</span>
-              <span>Se cruzan estos identificadores para reconocerte entre diferentes páginas web sin necesidad de que inicies sesión.</span>
-            </li>
-          </ul>
+          <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs">
+            <!-- 1 -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-lg">🎭</span>
+                  <span class="font-bold text-brand-navy text-sm">Mensajes falsos que sí crees</span>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                  Si ya saben qué celular tienes, qué compañía de internet usas y que estás en la universidad, no te mandan un mensaje genérico. Te mandan una alerta fingiendo ser el soporte de tu propia escuela o compañía telefónica pidiéndote tu contraseña para "arreglar tu cuenta".
+                </p>
+              </div>
+              <span class="text-[11px] text-brand-alertRed font-semibold mt-3 pt-2 border-t border-slate-200/80">Peligro: Robo de cuentas y contraseñas</span>
+            </div>
+
+            <!-- 2 -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-lg">🪤</span>
+                  <span class="font-bold text-brand-navy text-sm">Trampas directas a tu equipo</span>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                  Al saber si traes Android, iPhone o Windows desactualizado, el atacante no pierde tiempo probando cosas al azar. Sabe con exactitud qué fallas de seguridad tiene tu versión específica para intentar colarte un archivo dañino o tomar el control.
+                </p>
+              </div>
+              <span class="text-[11px] text-brand-alertRed font-semibold mt-3 pt-2 border-t border-slate-200/80">Peligro: Instalación de virus</span>
+            </div>
+
+            <!-- 3 -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-lg">👤</span>
+                  <span class="font-bold text-brand-navy text-sm">Hacerse pasar por ti</span>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                  Tus redes sociales y bancos reconocen la "forma" de tu pantalla y tu navegador para no pedirte código cada vez que entras. Si un atacante copia estas características, puede intentar engañar a la página para entrar a tu perfil sin levantar sospechas.
+                </p>
+              </div>
+              <span class="text-[11px] text-brand-alertRed font-semibold mt-3 pt-2 border-t border-slate-200/80">Peligro: Evasión de bloqueos de seguridad</span>
+            </div>
+          </div>
         </div>
 
-        <button onclick="openModal('howToProtectModal')" class="mt-4 w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 font-bold text-xs text-white transition shadow-lg text-center">
-          🛡️ Ver cómo protegerme en 3 pasos sencillos
+        <button onclick="openModal('howToProtectModal')" class="mt-5 w-full py-3 px-4 rounded-xl bg-brand-blue hover:bg-blue-600 font-bold text-xs text-white transition shadow-sm text-center">
+          🛡️ ¿Cómo puedo proteger mis dispositivos?
         </button>
       </article>
 
     </div>
 
-    <!-- Consejos prácticos universitarios -->
-    <div class="mt-10 p-6 rounded-3xl bg-campus-850 border border-slate-700">
-      <div class="mb-6">
-        <h3 class="text-lg font-bold text-white flex items-center gap-2">
-          <span>🎒</span> 3 Reglas de oro para navegar seguro en la universidad
-        </h3>
-        <p class="text-xs text-slate-400">Recomendaciones directas y fáciles de aplicar en el día a día escolar.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="p-4 rounded-2xl bg-campus-900 border border-slate-800">
-          <div class="text-2xl mb-2">🚫 🏷️</div>
-          <h4 class="font-bold text-white text-sm mb-1">Ojo con los QR pegados en el campus</h4>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Cualquiera puede sobreponer una calcomanía QR en una cafetería o cartelera para redirigirte a páginas que capturan tu red o simulan accesos de inicio de sesión.
-          </p>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-campus-900 border border-slate-800">
-          <div class="text-2xl mb-2">🦊 🛡️</div>
-          <h4 class="font-bold text-white text-sm mb-1">Elige navegadores con defensas</h4>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Opciones como <strong>Firefox</strong> o <strong>Brave</strong> introducen datos genéricos para que tu equipo no sea fácil de perfilar entre páginas.
-          </p>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-campus-900 border border-slate-800">
-          <div class="text-2xl mb-2">☕ 📶</div>
-          <h4 class="font-bold text-white text-sm mb-1">Cuidado en redes Wi-Fi abiertas</h4>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Al conectarte a redes abiertas en cafeterías o eventos, evita realizar transferencias bancarias o trámites sensibles sin verificar el candado de seguridad (HTTPS).
-          </p>
-        </div>
-      </div>
-    </div>
+    
 
   </main>
 
   <!-- Modal: Cómo protegerme -->
-  <div id="howToProtectModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 modal-backdrop hidden opacity-0 transition-opacity duration-200">
-    <div class="bg-campus-850 border border-slate-700 rounded-3xl max-w-lg w-full p-6 text-slate-200 shadow-2xl relative">
-      <button onclick="closeModal('howToProtectModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-lg bg-campus-900">
+  <div id="howToProtectModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 modal-backdrop hidden opacity-0 transition-opacity duration-200">
+    <div class="bg-white border border-slate-200 rounded-3xl max-w-lg w-full p-6 text-slate-700 shadow-2xl relative">
+      <button onclick="closeModal('howToProtectModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 p-2 rounded-xl bg-slate-100 hover:bg-slate-200 transition">
         ✕
       </button>
 
-      <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 flex items-center justify-center text-2xl mb-4">
-        🛡️
-      </div>
 
-      <h3 class="text-xl font-bold text-white mb-2">
-        Protege tu información sin complicaciones
+      <h3 class="text-xl font-extrabold text-brand-navy mb-2">
+        Protege tu información
       </h3>
-      <p class="text-xs text-slate-400 mb-4">
-        No necesitas ser un experto en sistemas, solo tener en cuenta estos 3 hábitos:
+      <p class="text-xs text-slate-500 mb-4">
       </p>
 
-      <div class="space-y-3 text-xs text-slate-300">
-        <div class="flex items-start gap-3 p-3 rounded-xl bg-campus-900 border border-slate-800">
+      <div class="space-y-3 text-xs text-slate-700">
+        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
           <span class="text-xl">🦊</span>
           <div>
-            <strong class="text-white block">Usa navegadores que bloqueen rastreadores</strong>
-            Prueba Firefox (con protección estricta) o Brave para dificultar que sigan tus pasos entre sitios.
+            <strong class="text-brand-navy block mb-0.5">Usa navegadores que te protejan</strong>
+            Prueba Firefox (con protección estricta) o Brave para que los sitios web no puedan recopilar detalles de tu pantalla ni de tus hábitos.
           </div>
         </div>
 
-        <div class="flex items-start gap-3 p-3 rounded-xl bg-campus-900 border border-slate-800">
+        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+          <span class="text-xl">🛡️</span>
+          <div>
+            <strong class="text-brand-navy block mb-0.5">Utiliza antimalware en tus dispositivos</strong>
+            Usa la protección integrada de tu sistema (Windows Defender) o aprovecha las licencias de BitDefender que brinda la universidad. 
+    
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
           <span class="text-xl">🔎</span>
           <div>
-            <strong class="text-white block">Revisa la URL antes de entrar</strong>
-            La cámara suele mostrar una vista previa del enlace antes de abrirlo. Si no reconoces el dominio, evítalo.
+            <strong class="text-brand-navy block mb-0.5">Revisa el link antes de entrar</strong>
+            Tu cámara siempre muestra una vista previa del enlace al escanear un QR. Si el nombre se ve raro o sospechoso, no lo abras.
           </div>
         </div>
 
-        <div class="flex items-start gap-3 p-3 rounded-xl bg-campus-900 border border-slate-800">
+        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
           <span class="text-xl">🔄</span>
           <div>
-            <strong class="text-white block">Mantén actualizado tu sistema operativo</strong>
-            Las actualizaciones continuas de Android, iOS, Windows o macOS corrigen fugas de datos que exponen información del equipo.
+            <strong class="text-brand-navy block mb-0.5">Actualiza tu cel y computadora</strong>
+            Las actualizaciones continuas de tu teléfono o laptop tapan los agujeros de seguridad que los atacantes buscan aprovechar.
           </div>
         </div>
       </div>
 
-      <button onclick="closeModal('howToProtectModal')" class="mt-5 w-full py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs transition">
+      <button onclick="closeModal('howToProtectModal')" class="mt-5 w-full py-3 rounded-xl bg-brand-blue hover:bg-blue-600 text-white font-bold text-xs transition">
         ¡Entendido!
       </button>
     </div>
   </div>
 
   <!-- Footer -->
-  <footer class="border-t border-campus-800 py-6 text-center text-xs text-slate-500 bg-campus-850/40">
+  <footer class="border-t border-slate-200 py-6 text-center text-xs text-slate-500 bg-slate-50 mt-12">
     <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <span class="text-slate-400">Demostración con fines educativos sobre privacidad y concientización digital.</span>
+      <span class="text-slate-400">Demostración formativa para concientización y privacidad digital.</span>
     </div>
   </footer>
 
@@ -385,10 +386,10 @@
           } else if (conn.type === 'cellular') {
             speedElem.textContent = `Datos móviles (${conn.effectiveType ? conn.effectiveType.toUpperCase() : 'Móvil'})`;
           } else {
-            speedElem.textContent = conn.effectiveType ? `Conexión tipo ${conn.effectiveType.toUpperCase()}` : "Conectado a Internet";
+            speedElem.textContent = conn.effectiveType ? `Conexión ${conn.effectiveType.toUpperCase()}` : "Conectado a Internet";
           }
         } else {
-          speedElem.textContent = "Banda ancha / Wi-Fi detectado";
+          speedElem.textContent = "Wi-Fi / Red cableada";
         }
       } catch (e) {
         if (speedElem) speedElem.textContent = "Conectado a Internet";
@@ -409,7 +410,7 @@
             .then(res => res.json())
             .then(d => {
               document.getElementById('geoCity').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone || "Zona local detectada";
-              document.getElementById('geoISP').textContent = "Red local activa";
+              document.getElementById('geoISP').textContent = "Red local detectada";
               document.getElementById('geoIpPublic').textContent = d.ip;
             })
             .catch(() => {
@@ -440,8 +441,8 @@
       const touchPoints = navigator.maxTouchPoints || 0;
       if (touchElem) {
         touchElem.textContent = touchPoints > 0 
-          ? `Sí (Detecta hasta ${touchPoints} dedos)` 
-          : "No (Usas mouse o touchpad normal)";
+          ? `Sí (Detecta hasta ${touchPoints} puntos táctiles)` 
+          : "No (Mouse o touchpad tradicional)";
       }
 
       // Screen size
@@ -484,12 +485,12 @@
               if (/NVIDIA/i.test(renderer)) gpuElem.textContent = "Tarjeta NVIDIA Gamer/Pro";
               else if (/Radeon|AMD/i.test(renderer)) gpuElem.textContent = "Chip Gráfico AMD Radeon";
               else if (/Apple/i.test(renderer)) gpuElem.textContent = "Chip Apple Silicon";
-              else if (/Adreno/i.test(renderer)) gpuElem.textContent = "Procesador Snapdragon (Adreno)";
-              else if (/Mali/i.test(renderer)) gpuElem.textContent = "Chip ARM Mali (Móvil)";
+              else if (/Adreno/i.test(renderer)) gpuElem.textContent = "Snapdragon (Adreno)";
+              else if (/Mali/i.test(renderer)) gpuElem.textContent = "ARM Mali (Móvil)";
               else if (/Intel/i.test(renderer)) gpuElem.textContent = "Gráficos integrados Intel";
               else gpuElem.textContent = renderer.substring(0, 22) + "...";
             } else {
-              gpuElem.textContent = "Chip acelerador estándar";
+              gpuElem.textContent = "Chip acelerador genérico";
             }
           } else {
             gpuElem.textContent = "No expuesto";
@@ -508,7 +509,7 @@
         const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         darkModeElem.textContent = isDark 
           ? "Sí, prefieres modo oscuro 🌙" 
-          : "No, usas modo claro diurno ☀️";
+          : "No, usas modo diurno ☀️️";
       }
 
       // Time zone
@@ -559,7 +560,7 @@
       const motionElem = document.getElementById('motionSensorRelatable');
       if (motionElem) {
         if (window.DeviceMotionEvent) {
-          motionElem.textContent = "Disponible (Detecta si mueves el equipo)";
+          motionElem.textContent = "Disponible (Detecta inclinación y pasos)";
         } else {
           motionElem.textContent = "No disponible en este equipo";
         }
